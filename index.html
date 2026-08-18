@@ -442,6 +442,44 @@
             text-align: center;
         }
 
+        /* Process Section */
+        .process {
+            padding: 8rem 5%;
+            background-color: var(--bg-cotton);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: left;
+            border-top: 1px solid var(--accent-sepia);
+            padding-top: 2rem;
+        }
+
+        .process-step i {
+            font-size: 2.5rem;
+            color: var(--primary-earth);
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
         /* Testimonials Section */
         .testimonials {
             padding: 8rem 5%;
@@ -661,6 +699,9 @@
             .frame { width: 250px; padding: 8px 8px 30px 8px; }
             .frame img { height: 300px; }
             
+            .process { padding: 4rem 5%; }
+            .process-grid { gap: 2rem; }
+
             .testimonials { padding: 4rem 5%; }
             .testimonial-card { padding: 2rem 1rem; }
             
@@ -700,6 +741,7 @@
             <div class="hero-text">
                 <h1 data-i18n="hero_h1">Revelamos momentos, emociones y tu mejor perfil.</h1>
                 <p data-i18n="hero_p">Queremos lo real: risas, miradas, abrazos.<br>¿Nos dejas capturarlo?</p>
+                <p class="mono-text" style="margin-bottom: 2rem; color: var(--primary-earth);" data-i18n="hero_price">Sesiones desde 750€</p>
                 <a href="#booking" class="mono-text" style="text-decoration: underline; text-underline-offset: 4px;" data-i18n="hero_cta">Reservar sesión →</a>
             </div>
             <div class="hero-image-wrapper">
@@ -773,17 +815,55 @@
         </div>
     </section>
 
+    <!-- Process Section -->
+    <section class="process">
+        <div class="section-header">
+            <h2 data-i18n="sec3_title">Cómo Trabajamos</h2>
+            <span class="mono-text" data-i18n="sec3_sub">03 — Proceso</span>
+        </div>
+        
+        <div class="process-grid">
+            <div class="process-step">
+                <i class="ph ph-video-camera"></i>
+                <h3 data-i18n="proc_1_title">1. Contacto</h3>
+                <p data-i18n="proc_1_desc">Videollamada o reunión presencial para conocernos y organizar todos los detalles.</p>
+            </div>
+            <div class="process-step">
+                <i class="ph ph-shield-check"></i>
+                <h3 data-i18n="proc_2_title">2. Tranquilidad</h3>
+                <p data-i18n="proc_2_desc">Trabajamos en equipo y contamos con sustituto en caso de cualquier imprevisto.</p>
+            </div>
+            <div class="process-step">
+                <i class="ph ph-wallet"></i>
+                <h3 data-i18n="proc_3_title">3. Pagos</h3>
+                <p data-i18n="proc_3_desc">30% al reservar la fecha, 40% un mes antes de la boda, 30% restante tras la entrega.</p>
+            </div>
+            <div class="process-step">
+                <i class="ph ph-calendar-check"></i>
+                <h3 data-i18n="proc_4_title">4. Entrega</h3>
+                <p data-i18n="proc_4_desc">Recibiréis vuestro reportaje completo aproximadamente 1 mes después del gran día.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="section-header" style="justify-content: center; border: none; margin-bottom: 4rem;">
-            <span class="mono-text" data-i18n="sec3_sub">03 — Testimonios</span>
+            <span class="mono-text" data-i18n="sec4_sub">04 — Testimonios</span>
         </div>
         <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-quote" data-i18n="testim_placeholder">"Espacio reservado para testimonio de cliente. Próximamente."</p>
+            <div class="testimonial-card" style="opacity: 1; border-style: solid;">
+                <div style="color: var(--primary-earth); display: flex; justify-content: center; gap: 0.2rem; font-size: 1.2rem;">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                </div>
+                <p class="testimonial-quote" data-i18n="testim_1_quote">"Los recomiendo 100%, son demasiado profesionales en su trabajo, hicieron de nuestro día algo inolvidable"</p>
                 <div class="testimonial-author">
-                    <p class="testimonial-name">Nombre Cliente</p>
-                    <p class="mono-text">Servicio, Año</p>
+                    <p class="testimonial-name" data-i18n="testim_1_name">Evelyn</p>
+                    <p class="mono-text" data-i18n="testim_1_service">Boda, 2025</p>
                 </div>
             </div>
             <div class="testimonial-card">
@@ -806,7 +886,7 @@
     <!-- Booking Section -->
     <section id="booking" class="booking">
         <div class="section-header" style="justify-content: center; border: none; margin-bottom: 4rem;">
-            <span class="mono-text" data-i18n="sec4_sub">04 — Hablemos</span>
+            <span class="mono-text" data-i18n="sec5_sub">05 — Hablemos</span>
         </div>
         <div class="booking-form">
             <div class="form-group">
@@ -816,7 +896,8 @@
             <div class="form-group">
                 <label class="mono-text form-label" data-i18n="form_service">Servicio de interés</label>
                 <select class="form-select" id="form-select">
-                    <option value="boda" data-i18n="serv_wedding">Boda</option>
+                    <option value="boda" data-i18n="serv_wedding">Boda (Foto y/o Vídeo)</option>
+                    <option value="preboda" data-i18n="serv_prewedding">Preboda / Postboda</option>
                     <option value="familia" data-i18n="serv_family">Familia</option>
                     <option value="embarazo" data-i18n="serv_maternity">Embarazo / Maternidad</option>
                     <option value="newborn" data-i18n="serv_newborn">Newborn</option>
@@ -898,9 +979,11 @@
                 'hero_p': 'Queremos lo real: risas, miradas, abrazos.<br>¿Nos dejas capturarlo?',
                 'footer_tagline': 'Queremos lo real: risas, miradas, abrazos.<br>¿Nos dejas capturarlo?',
                 'hero_cta': 'Reservar sesión →',
+                'hero_price': 'Sesiones desde 750€',
                 'sec1_title': 'Colecciones',
                 'sec1_sub': '01 — Servicios',
-                'serv_wedding': 'Boda',
+                'serv_wedding': 'Boda (Foto y/o Vídeo)',
+                'serv_prewedding': 'Preboda / Postboda',
                 'serv_family': 'Familia',
                 'serv_maternity': 'Embarazo / Maternidad',
                 'serv_newborn': 'Newborn',
@@ -911,9 +994,22 @@
                 'serv_other': 'Otro',
                 'sec2_title': 'Nuestra Mirada',
                 'sec2_sub': '02 — Archivo',
-                'sec3_sub': '03 — Testimonios',
+                'sec3_title': 'Cómo Trabajamos',
+                'sec3_sub': '03 — Proceso',
+                'proc_1_title': '1. Contacto',
+                'proc_1_desc': 'Videollamada o reunión presencial para conocernos y organizar todos los detalles.',
+                'proc_2_title': '2. Tranquilidad',
+                'proc_2_desc': 'Trabajamos en equipo y contamos con sustituto en caso de cualquier imprevisto.',
+                'proc_3_title': '3. Pagos',
+                'proc_3_desc': '30% al reservar la fecha, 40% un mes antes de la boda, 30% restante tras la entrega.',
+                'proc_4_title': '4. Entrega',
+                'proc_4_desc': 'Recibiréis vuestro reportaje completo aproximadamente 1 mes después del gran día.',
+                'sec4_sub': '04 — Testimonios',
+                'testim_1_quote': '"Los recomiendo 100%, son demasiado profesionales en su trabajo, hicieron de nuestro día algo inolvidable"',
+                'testim_1_name': 'Evelyn',
+                'testim_1_service': 'Boda, 2025',
                 'testim_placeholder': '"Espacio reservado para testimonio de cliente. Próximamente."',
-                'sec4_sub': '04 — Hablemos',
+                'sec5_sub': '05 — Hablemos',
                 'form_name': 'Nombre completo',
                 'form_name_ph': 'Escribe tu nombre',
                 'form_service': 'Servicio de interés',
@@ -933,9 +1029,11 @@
                 'hero_p': 'We want the real: laughter, glances, hugs.<br>Let us capture it.',
                 'footer_tagline': 'We want the real: laughter, glances, hugs.<br>Let us capture it.',
                 'hero_cta': 'Book session →',
+                'hero_price': 'Sessions from 750€',
                 'sec1_title': 'Collections',
                 'sec1_sub': '01 — Services',
-                'serv_wedding': 'Wedding',
+                'serv_wedding': 'Wedding (Photo & Video)',
+                'serv_prewedding': 'Pre-wedding / Post-wedding',
                 'serv_family': 'Family',
                 'serv_maternity': 'Maternity / Pregnancy',
                 'serv_newborn': 'Newborn',
@@ -946,9 +1044,22 @@
                 'serv_other': 'Other',
                 'sec2_title': 'Our Vision',
                 'sec2_sub': '02 — Archive',
-                'sec3_sub': '03 — Testimonials',
+                'sec3_title': 'How We Work',
+                'sec3_sub': '03 — Process',
+                'proc_1_title': '1. Contact',
+                'proc_1_desc': 'Video call or in-person meeting to get to know each other and organize all the details.',
+                'proc_2_title': '2. Peace of Mind',
+                'proc_2_desc': 'We work as a team and have a substitute available for any unforeseen events.',
+                'proc_3_title': '3. Payments',
+                'proc_3_desc': '30% to reserve the date, 40% a month before the wedding, remaining 30% upon delivery.',
+                'proc_4_title': '4. Delivery',
+                'proc_4_desc': 'You will receive your full report approximately 1 month after your big day.',
+                'sec4_sub': '04 — Testimonials',
+                'testim_1_quote': '"I recommend them 100%, they are extremely professional, they made our day unforgettable"',
+                'testim_1_name': 'Evelyn',
+                'testim_1_service': 'Wedding, 2025',
                 'testim_placeholder': '"Placeholder for client testimonial. Coming soon."',
-                'sec4_sub': '04 — Let\'s talk',
+                'sec5_sub': '05 — Let\'s talk',
                 'form_name': 'Full name',
                 'form_name_ph': 'Write your name',
                 'form_service': 'Service of interest',
