@@ -261,9 +261,27 @@
             text-align: center;
         }
 
-        .services-list-container p {
-            font-size: 1rem;
-            line-height: 2.5;
+        .services-flex-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            column-gap: 1.5rem;
+            row-gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-ink);
+            padding: 0 2rem;
+        }
+
+        .services-flex-list span {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .services-flex-list span:not(:last-child)::after {
+            content: '·';
+            margin-left: 1.5rem;
             color: var(--primary-earth);
         }
 
@@ -619,8 +637,11 @@
             .hero-image-wrapper { height: 50vh; }
             
             .services { padding: 4rem 5%; }
-            .services-list-container p { font-size: 0.9rem !important; line-height: 2 !important; padding: 0 !important; }
-            .service-item img { height: 350px; }
+            .services-list-container { margin-bottom: 3rem !important; }
+            .services-flex-list { font-size: 0.85rem; padding: 0; column-gap: 1rem; row-gap: 0.8rem; }
+            .services-flex-list span:not(:last-child)::after { margin-left: 1rem; }
+            .services-grid { gap: 1rem; }
+            .service-item img { height: 250px; }
             
             .portfolio { padding: 4rem 0; }
             .frame { width: 250px; padding: 8px 8px 30px 8px; }
@@ -681,16 +702,16 @@
         </div>
         
         <div class="services-list-container" style="margin-bottom: 5rem;">
-            <p class="mono-text" style="font-size: 1.1rem; line-height: 2.5; color: var(--text-ink); padding: 0 2rem;">
-                <span data-i18n="serv_wedding">Boda</span> &nbsp;·&nbsp; 
-                <span data-i18n="serv_family">Familia</span> &nbsp;·&nbsp; 
-                <span data-i18n="serv_maternity">Embarazo / Maternidad</span> &nbsp;·&nbsp; 
-                <span data-i18n="serv_newborn">Newborn</span> &nbsp;·&nbsp; 
-                <span data-i18n="serv_portrait">Retrato</span> &nbsp;·&nbsp; 
-                <span data-i18n="serv_events">Eventos</span> &nbsp;·&nbsp; 
-                <span data-i18n="serv_personal">Marca Personal</span> &nbsp;·&nbsp; 
+            <div class="mono-text services-flex-list">
+                <span data-i18n="serv_wedding">Boda</span>
+                <span data-i18n="serv_family">Familia</span>
+                <span data-i18n="serv_maternity">Embarazo / Maternidad</span>
+                <span data-i18n="serv_newborn">Newborn</span>
+                <span data-i18n="serv_portrait">Retrato</span>
+                <span data-i18n="serv_events">Eventos</span>
+                <span data-i18n="serv_personal">Marca Personal</span>
                 <span data-i18n="serv_social">Contenido RRSS</span>
-            </p>
+            </div>
         </div>
 
         <div class="services-grid">
