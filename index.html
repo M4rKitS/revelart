@@ -386,9 +386,42 @@
             background-color: var(--bg-cotton);
         }
 
-        .booking-form {
-            max-width: 600px;
+        .booking-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .booking-form {
+            width: 100%;
+        }
+
+        .booking-location {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-container {
+            margin-top: 1rem;
+            width: 100%;
+            flex-grow: 1;
+            min-height: 350px;
+            border: 1px solid var(--accent-sepia);
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            filter: grayscale(80%) sepia(20%) contrast(1.1);
+            transition: var(--transition-fast);
+        }
+
+        .map-container:hover iframe {
+            filter: grayscale(40%) sepia(10%) contrast(1.05);
         }
 
         .form-group {
@@ -654,6 +687,7 @@
             .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
             .section-header h2 { font-size: 2.5rem; }
             .footer-links { flex-direction: column; align-items: center; gap: 1rem; }
+            .booking-layout { grid-template-columns: 1fr; gap: 3rem; }
             .fab-whatsapp {
                 bottom: 1.5rem;
                 right: 1.5rem;
@@ -888,8 +922,9 @@
         <div class="section-header" style="justify-content: center; border: none; margin-bottom: 4rem;">
             <span class="mono-text" data-i18n="sec5_sub">05 — Hablemos</span>
         </div>
-        <div class="booking-form">
-            <div class="form-group">
+        <div class="booking-layout">
+            <div class="booking-form">
+                <div class="form-group">
                 <label class="mono-text form-label" data-i18n="form_name">Nombre completo</label>
                 <input type="text" id="input_name" class="form-input" data-i18n-placeholder="form_name_ph" placeholder="Escribe tu nombre">
             </div>
@@ -917,11 +952,22 @@
                 <textarea id="input_msg" class="form-textarea" data-i18n-placeholder="form_msg_ph" placeholder="¿Qué te gustaría capturar?"></textarea>
             </div>
             
-            <div class="submit-wrapper">
+            <div class="submit-wrapper" style="text-align: left;">
                 <button onclick="sendWhatsApp()" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.5rem 3rem;">
                     <i class="ph ph-whatsapp-logo" style="font-size: 1.5rem;"></i>
                     <span data-i18n="btn_wa">Enviar por WhatsApp</span>
                 </button>
+            </div>
+            </div>
+            
+            <div class="booking-location">
+                <h3 class="mono-text" style="margin-bottom: 1.5rem; color: var(--primary-earth);" data-i18n="loc_title">Nuestro Estudio</h3>
+                <p style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                    <i class="ph ph-map-pin" style="color: var(--primary-earth);"></i> Alicante 03003, Alacant/Alicante
+                </p>
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=38.3458,-0.490944&hl=es&z=15&output=embed" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -1019,6 +1065,7 @@
                 'form_msg_ph': '¿Qué te gustaría capturar?',
                 'btn_wa': 'Enviar por WhatsApp',
                 'btn_email': 'Enviar por Email',
+                'loc_title': 'Nuestro Estudio',
                 'footer_loc': 'Alicante, España',
                 'footer_copy': '© 2026 Revelart Fotografía y Vídeo',
                 'footer_maker': 'Sitio web creado por Marcos Rodríguez'
@@ -1069,6 +1116,7 @@
                 'form_msg_ph': 'What would you like to capture?',
                 'btn_wa': 'Send via WhatsApp',
                 'btn_email': 'Send via Email',
+                'loc_title': 'Our Studio',
                 'footer_loc': 'Alicante, Spain',
                 'footer_copy': '© 2026 Revelart Photography and Video',
                 'footer_maker': 'Website created by Marcos Rodríguez'
