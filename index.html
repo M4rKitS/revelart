@@ -724,6 +724,7 @@
             .section-header h2 { font-size: 2.5rem; }
             .philosophy-layout { grid-template-columns: 1fr; gap: 2rem; }
             .philosophy-image { height: 400px; }
+            .process-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
             .footer-links { flex-direction: column; align-items: center; gap: 1rem; }
             .booking-layout { grid-template-columns: 1fr; gap: 3rem; }
             .fab-whatsapp {
@@ -777,7 +778,9 @@
             .frame img { height: 300px; }
             
             .process { padding: 4rem 5%; }
-            .process-grid { gap: 2rem; }
+            .process-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .process-step { gap: 1rem; padding-top: 1.5rem; }
+            .process-step i { font-size: 2rem; }
 
             .testimonials { padding: 4rem 5%; }
             .testimonial-card { padding: 2rem 1rem; }
@@ -1037,7 +1040,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-top">
-            <img src="assets/logo-white.png" alt="Revelart" style="height: 40px; margin-bottom: 1rem;">
+            <div class="footer-logo-text">REVEL<span style="font-weight: 500;">ART</span></div>
             <p class="footer-tagline" data-i18n="footer_tagline">Queremos lo real: risas, miradas, abrazos.<br>¿Nos dejas capturarlo?</p>
             <p class="footer-location"><i class="ph ph-map-pin"></i> <span data-i18n="footer_loc">Alicante, España</span></p>
             
