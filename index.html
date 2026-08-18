@@ -640,13 +640,19 @@
             .services { padding: 4rem 5%; }
             .services-list-container { margin-bottom: 3rem !important; }
             .services-flex-list { 
-                display: grid; 
-                grid-template-columns: 1fr 1fr; 
-                gap: 1rem; 
-                font-size: 0.85rem; 
+                display: flex; 
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.6rem; 
                 padding: 0; 
             }
-            .services-flex-list span { justify-content: center; }
+            .services-flex-list span { 
+                border: 1px solid var(--accent-sepia);
+                padding: 0.4rem 1rem;
+                border-radius: 50px;
+                font-size: 0.75rem;
+                justify-content: center; 
+            }
             .services-flex-list span::after { display: none !important; }
             .services-grid { gap: 1rem; }
             .service-item img { height: 250px; }
