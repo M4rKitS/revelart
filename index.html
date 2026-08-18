@@ -235,6 +235,42 @@
             100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
         }
 
+        /* Philosophy Section */
+        .philosophy {
+            padding: 8rem 5% 4rem;
+            background-color: var(--bg-cotton);
+        }
+
+        .philosophy-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .philosophy-text h2 {
+            font-size: clamp(2rem, 3.5vw, 2.5rem);
+            margin-bottom: 2rem;
+            line-height: 1.3;
+            font-style: italic;
+            color: var(--primary-earth);
+        }
+
+        .philosophy-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .philosophy-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            filter: grayscale(20%) contrast(0.9) sepia(10%);
+        }
+
         /* Services Grid */
         .services {
             padding: 8rem 5%;
@@ -686,6 +722,8 @@
             .service-item:nth-child(n) { grid-column: span 12; }
             .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
             .section-header h2 { font-size: 2.5rem; }
+            .philosophy-layout { grid-template-columns: 1fr; gap: 3rem; }
+            .philosophy-image { height: 400px; }
             .footer-links { flex-direction: column; align-items: center; gap: 1rem; }
             .booking-layout { grid-template-columns: 1fr; gap: 3rem; }
             .fab-whatsapp {
@@ -785,10 +823,25 @@
         </div>
     </header>
 
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy">
+        <div class="section-header" style="justify-content: flex-start; border: none; margin-bottom: 3rem;">
+            <span class="mono-text" data-i18n="sec1_sub">01 — Nuestra Filosofía</span>
+        </div>
+        <div class="philosophy-layout">
+            <div class="philosophy-text">
+                <h2 data-i18n="phil_title">"Trabajamos con el corazón en una mano y la cámara en la otra."</h2>
+                <p data-i18n="phil_p1">Hay historias que merecen ser contadas tal y como fueron. En Revelart convertimos momentos reales en recuerdos que laten, ríen y emocionan.</p>
+                <p data-i18n="phil_p2">Nada de poses forzadas ni cámaras invasivas: solo miradas sinceras y abrazos sentidos. Nuestro mayor objetivo es que os sintáis cómodos, libres y totalmente vosotros mismos frente a la cámara, para entregaros un recuerdo auténtico y natural que siga tocando vuestro corazón dentro de muchos años.</p>
+            </div>
+            <img src="assets/Captura de pantalla 2026-08-18 a las 19.56.05.png" alt="Filosofía Revelart" class="philosophy-image">
+        </div>
+    </section>
+
     <!-- Services Grid -->
     <section id="services" class="services">
         <div class="section-header" style="justify-content: flex-end;">
-            <span class="mono-text" data-i18n="sec1_sub">01 — Servicios</span>
+            <span class="mono-text" data-i18n="sec2_sub">02 — Servicios</span>
         </div>
         
         <div class="services-list-container" style="margin-bottom: 5rem;">
@@ -826,8 +879,8 @@
     <!-- Portfolio (Contact Sheet) -->
     <section class="portfolio">
         <div class="section-header">
-            <h2 data-i18n="sec2_title">Nuestra Mirada</h2>
-            <span class="mono-text" data-i18n="sec2_sub">02 — Archivo</span>
+            <h2 data-i18n="sec3_title">Nuestra Mirada</h2>
+            <span class="mono-text" data-i18n="sec3_sub">03 — Archivo</span>
         </div>
         <div class="contact-sheet-wrapper">
             <div class="contact-sheet-track">
@@ -852,8 +905,8 @@
     <!-- Process Section -->
     <section class="process">
         <div class="section-header">
-            <h2 data-i18n="sec3_title">Cómo Trabajamos</h2>
-            <span class="mono-text" data-i18n="sec3_sub">03 — Proceso</span>
+            <h2 data-i18n="sec4_title">Cómo Trabajamos</h2>
+            <span class="mono-text" data-i18n="sec4_sub">04 — Proceso</span>
         </div>
         
         <div class="process-grid">
@@ -883,7 +936,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="section-header" style="justify-content: center; border: none; margin-bottom: 4rem;">
-            <span class="mono-text" data-i18n="sec4_sub">04 — Testimonios</span>
+            <span class="mono-text" data-i18n="sec5_sub">05 — Testimonios</span>
         </div>
         <div class="testimonials-grid">
             <div class="testimonial-card" style="opacity: 1; border-style: solid;">
@@ -920,7 +973,7 @@
     <!-- Booking Section -->
     <section id="booking" class="booking">
         <div class="section-header" style="justify-content: center; border: none; margin-bottom: 4rem;">
-            <span class="mono-text" data-i18n="sec5_sub">05 — Hablemos</span>
+            <span class="mono-text" data-i18n="sec6_sub">06 — Hablemos</span>
         </div>
         <div class="booking-layout">
             <div class="booking-form">
@@ -1026,8 +1079,12 @@
                 'footer_tagline': 'Queremos lo real: risas, miradas, abrazos.<br>¿Nos dejas capturarlo?',
                 'hero_cta': 'Reservar sesión →',
                 'hero_price': 'Sesiones desde 750€',
-                'sec1_title': 'Colecciones',
-                'sec1_sub': '01 — Servicios',
+                'sec1_sub': '01 — Nuestra Filosofía',
+                'phil_title': '"Trabajamos con el corazón en una mano y la cámara en la otra."',
+                'phil_p1': 'Hay historias que merecen ser contadas tal y como fueron. En Revelart convertimos momentos reales en recuerdos que laten, ríen y emocionan.',
+                'phil_p2': 'Nada de poses forzadas ni cámaras invasivas: solo miradas sinceras y abrazos sentidos. Nuestro mayor objetivo es que os sintáis cómodos, libres y totalmente vosotros mismos frente a la cámara, para entregaros un recuerdo auténtico y natural que siga tocando vuestro corazón dentro de muchos años.',
+                'sec2_title': 'Colecciones',
+                'sec2_sub': '02 — Servicios',
                 'serv_wedding': 'Boda (Foto y/o Vídeo)',
                 'serv_prewedding': 'Preboda / Postboda',
                 'serv_family': 'Familia',
@@ -1038,10 +1095,10 @@
                 'serv_personal': 'Marca Personal',
                 'serv_social': 'Contenido RRSS',
                 'serv_other': 'Otro',
-                'sec2_title': 'Nuestra Mirada',
-                'sec2_sub': '02 — Archivo',
-                'sec3_title': 'Cómo Trabajamos',
-                'sec3_sub': '03 — Proceso',
+                'sec3_title': 'Nuestra Mirada',
+                'sec3_sub': '03 — Archivo',
+                'sec4_title': 'Cómo Trabajamos',
+                'sec4_sub': '04 — Proceso',
                 'proc_1_title': '1. Contacto',
                 'proc_1_desc': 'Videollamada o reunión presencial para conocernos y organizar todos los detalles.',
                 'proc_2_title': '2. Tranquilidad',
@@ -1050,12 +1107,12 @@
                 'proc_3_desc': '30% al reservar la fecha, 40% un mes antes de la boda, 30% restante tras la entrega.',
                 'proc_4_title': '4. Entrega',
                 'proc_4_desc': 'Recibiréis vuestro reportaje completo aproximadamente 1 mes después del gran día.',
-                'sec4_sub': '04 — Testimonios',
+                'sec5_sub': '05 — Testimonios',
                 'testim_1_quote': '"Los recomiendo 100%, son demasiado profesionales en su trabajo, hicieron de nuestro día algo inolvidable"',
                 'testim_1_name': 'Evelyn',
                 'testim_1_service': 'Boda, 2025',
                 'testim_placeholder': '"Espacio reservado para testimonio de cliente. Próximamente."',
-                'sec5_sub': '05 — Hablemos',
+                'sec6_sub': '06 — Hablemos',
                 'form_name': 'Nombre completo',
                 'form_name_ph': 'Escribe tu nombre',
                 'form_service': 'Servicio de interés',
@@ -1077,8 +1134,12 @@
                 'footer_tagline': 'We want the real: laughter, glances, hugs.<br>Let us capture it.',
                 'hero_cta': 'Book session →',
                 'hero_price': 'Sessions from 750€',
-                'sec1_title': 'Collections',
-                'sec1_sub': '01 — Services',
+                'sec1_sub': '01 — Our Philosophy',
+                'phil_title': '"We work with our heart in one hand and the camera in the other."',
+                'phil_p1': 'There are stories that deserve to be told exactly as they were. At Revelart we turn real moments into memories that beat, laugh and thrill.',
+                'phil_p2': 'No forced poses or invasive cameras: just sincere glances and heartfelt hugs. Our main goal is for you to feel comfortable, free and completely yourselves in front of the camera, to deliver an authentic and natural memory that will continue to touch your heart for years to come.',
+                'sec2_title': 'Collections',
+                'sec2_sub': '02 — Services',
                 'serv_wedding': 'Wedding (Photo & Video)',
                 'serv_prewedding': 'Pre-wedding / Post-wedding',
                 'serv_family': 'Family',
@@ -1089,10 +1150,10 @@
                 'serv_personal': 'Personal Brand',
                 'serv_social': 'Social Media Content',
                 'serv_other': 'Other',
-                'sec2_title': 'Our Vision',
-                'sec2_sub': '02 — Archive',
-                'sec3_title': 'How We Work',
-                'sec3_sub': '03 — Process',
+                'sec3_title': 'Our Vision',
+                'sec3_sub': '03 — Archive',
+                'sec4_title': 'How We Work',
+                'sec4_sub': '04 — Process',
                 'proc_1_title': '1. Contact',
                 'proc_1_desc': 'Video call or in-person meeting to get to know each other and organize all the details.',
                 'proc_2_title': '2. Peace of Mind',
@@ -1101,12 +1162,12 @@
                 'proc_3_desc': '30% to reserve the date, 40% a month before the wedding, remaining 30% upon delivery.',
                 'proc_4_title': '4. Delivery',
                 'proc_4_desc': 'You will receive your full report approximately 1 month after your big day.',
-                'sec4_sub': '04 — Testimonials',
+                'sec5_sub': '05 — Testimonials',
                 'testim_1_quote': '"I recommend them 100%, they are extremely professional, they made our day unforgettable"',
                 'testim_1_name': 'Evelyn',
                 'testim_1_service': 'Wedding, 2025',
                 'testim_placeholder': '"Placeholder for client testimonial. Coming soon."',
-                'sec5_sub': '05 — Let\'s talk',
+                'sec6_sub': '06 — Let\'s talk',
                 'form_name': 'Full name',
                 'form_name_ph': 'Write your name',
                 'form_service': 'Service of interest',
