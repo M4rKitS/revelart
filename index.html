@@ -778,8 +778,10 @@
             .frame img { height: 300px; }
             
             .process { padding: 4rem 5%; }
-            .process-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .process-step { gap: 1rem; padding-top: 1.5rem; }
+            .process .section-header { margin-bottom: 2rem; }
+            .process-grid { grid-template-columns: 1fr; gap: 0; }
+            .process-step { gap: 1rem; padding: 2rem 0; border-top: 1px solid var(--accent-sepia); }
+            .process-step:first-child { border-top: none; padding-top: 0; }
             .process-step i { font-size: 2rem; }
 
             .testimonials { padding: 4rem 5%; }
